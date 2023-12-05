@@ -1,0 +1,8 @@
+Para poder replicar este proyecto en tu ordenador vas a tener que tener en cuenta las siguientes cosas:
+1.Instalar XAMPP
+2.Crear en Mysql una base de datos llamada phpcrud
+3.Recordar no poner contraseña, en caso de haber puesto una modificar el archivo conexion.php
+4.Dentro de la base crear una tabla llamada contactos
+5.La tabla tiene que contener 4 campos (id,nombre,telefono,fecha)
+
+Si realizaste estos pasos deberia poder replicar el mismo.
