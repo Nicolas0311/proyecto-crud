@@ -5,14 +5,19 @@
     $fecha=(isset($_POST['fecha'])?$_POST['fecha']:"");
     $telefono=(isset($_POST['telefono'])?$_POST['telefono']:"");
 
-    $stm=$conexion->prepare("INSERT INTO contactos(id, nombre,telefono,fecha) 
-    VALUES (null, :nombre,:telefono,:fecha)");
+    $stm=$conexion->prepare("INSERT INTO contactos(nombre,telefono,fecha) 
+    VALUES (:nombre,:telefono,:fecha)");
     $stm->bindParam(':nombre',$nombre );
     $stm->bindParam(':telefono',$telefono );
     $stm->bindParam(':fecha',$fecha );
-    $stm->execute();
+    if($stm->execute()){
+      header("location:index.php");  
+    }else {
+      alert("No se pudo crear contacto");
+    }
+    
   
-    header("location:index.php");
+    
   } 
 
 

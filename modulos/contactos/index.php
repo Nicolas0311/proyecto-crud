@@ -11,8 +11,12 @@ if(isset($_GET['id'])){
 $txtid=(isset($_GET['id'])?$_GET['id']:"");
 $stm=$conexion->prepare("DELETE FROM contactos WHERE id=:txtid");
 $stm->bindParam(":txtid",$txtid );
-$stm->execute();
-header("location:index.php");
+if($stm->execute()){
+     header("location:index.php");
+}else {
+    alert("No elimina contacto");
+}
+
 
 
 }

@@ -30,9 +30,13 @@ if($_POST){
     $stm->bindParam(':telefono',$telefono );
     $stm->bindParam(':fecha',$fecha );
     $stm->bindParam(':txtid',$txtid );
-    $stm->execute();
+    if($stm->execute()){
+      header("location:index.php");
+    }else {
+      alert("no se pudo actualizar la informacion");
+    }
   
-    header("location:index.php");
+    
     
 }
 ?>
